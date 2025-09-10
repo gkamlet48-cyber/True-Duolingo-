@@ -1,0 +1,89 @@
+{
+  "courses": [
+    {
+      "id": "es",
+      "name": "Spanish",
+      "flag": "\ud83c\uddea\ud83c\uddf8",
+      "units": [
+        {
+          "id": "es-1",
+          "name": "Basics 1",
+          "items": [
+            {
+              "id": "es1-1",
+              "type": "mc",
+              "front": "\u00bfC\u00f3mo se dice \u201chello\u201d en espa\u00f1ol?",
+              "options": [
+                "adi\u00f3s",
+                "hola",
+                "gracias",
+                "por favor"
+              ],
+              "answer": "hola",
+              "xp": 10
+            },
+            {
+              "id": "es1-2",
+              "type": "type",
+              "front": "Write the Spanish word for \u201cthank you\u201d.",
+              "answer": "gracias",
+              "xp": 10
+            },
+            {
+              "id": "es1-3",
+              "type": "mc",
+              "front": "\u201cpor favor\u201d means\u2026",
+              "options": [
+                "please",
+                "sorry",
+                "goodbye",
+                "milk"
+              ],
+              "answer": "please",
+              "xp": 10
+            }
+          ]
+        },
+        {
+          "id": "es-2",
+          "name": "Food",
+          "items": [
+            {
+              "id": "es2-1",
+              "type": "mc",
+              "front": "\u00bfQu\u00e9 significa \u201cleche\u201d?",
+              "options": [
+                "bread",
+                "milk",
+                "apple",
+                "cheese"
+              ],
+              "answer": "milk",
+              "xp": 10
+            },
+            {
+              "id": "es2-2",
+              "type": "type",
+              "front": "Translate to Spanish: \u201capple\u201d.",
+              "answer": "manzana",
+              "xp": 10
+            },
+            {
+              "id": "es2-3",
+              "type": "mc",
+              "front": "Select \u201cbread\u201d.",
+              "options": [
+                "queso",
+                "pan",
+                "agua",
+                "huevo"
+              ],
+              "answer": "pan",
+              "xp": 10
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

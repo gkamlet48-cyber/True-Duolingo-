@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <title>LinguaSprint</title>
+  <meta name="description" content="A lightweight language-learning PWA with lessons, streaks, and spaced repetition." />
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#10b981" />
+  <!-- iOS PWA -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="LinguaSprint">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <div id="app">
+    <header class="topbar">
+      <div class="brand">
+        <img src="icons/icon-192.png" class="logo" alt="logo">
+        <h1>Lingua<span class="accent">Sprint</span></h1>
+      </div>
+      <div class="stats">
+        <span id="streak" title="Daily streak">🔥 0</span>
+        <span id="xp" title="XP">⭐ 0</span>
+      </div>
+    </header>
+
+    <main id="view">
+      <!-- Dynamic content injected by app.js -->
+    </main>
+
+    <nav class="tabbar">
+      <button class="tab active" data-tab="learn" aria-label="Learn">📚<span>Learn</span></button>
+      <button class="tab" data-tab="review" aria-label="Review">🔁<span>Review</span></button>
+      <button class="tab" data-tab="profile" aria-label="Profile">👤<span>Profile</span></button>
+    </nav>
+  </div>
+
+  <template id="tpl-home">
+    <section class="hero">
+      <h2>Choose a course</h2>
+      <div id="courses" class="grid"></div>
+    </section>
+    <section class="block">
+      <h3>Units</h3>
+      <div id="units" class="grid"></div>
+    </section>
+  </template>
+
+  <template id="tpl-lesson">
+    <section class="lesson">
+      <div class="progress"><div id="lessonProgress"></div></div>
+      <div id="card" class="card"></div>
+      <div class="controls">
+        <button id="skipBtn" class="ghost">Skip</button>
+        <button id="checkBtn" class="primary">Check</button>
+      </div>
+    </section>
+  </template>
+
+  <template id="tpl-profile">
+    <section class="block">
+      <h2>Profile</h2>
+      <div class="profile">
+        <div>Streak: <strong id="pfStreak">0</strong> days</div>
+        <div>XP: <strong id="pfXP">0</strong></div>
+        <div>Course: <strong id="pfCourse">–</strong></div>
+        <button id="resetBtn" class="danger">Reset progress</button>
+      </div>
+      <p class="hint">Tip: Add this app to your iPhone Home Screen from Safari (Share → Add to Home Screen) for the best experience and offline use.</p>
+    </section>
+  </template>
+
+  <script src="app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./service-worker.js');
+      });
+    }
+  </script>
+</body>
+</html>
